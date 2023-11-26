@@ -1,0 +1,23 @@
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true # ???? ??? ??? ??? ???.
+        jdbc:
+          foreign_keys: enabled
+      logging.level:
+        org.hibernate.SQL: debug # show_sql? System???? ??? Logger? ??? ?? ?? ??? ??
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+  batch:
+    job:
+      name: myJob
+      enabled: true
+    jdbc:
+      initialize-schema: ALWAYS # Sprin
+  datasource:
+    url: jdbc:sqlite:C:\Project\database\tourist_hub.db?foreign_keys=true
+    driver-class-name: org.sqlite.JDBC
